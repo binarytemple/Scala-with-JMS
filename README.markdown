@@ -10,3 +10,7 @@ Run the Producer with:
 
 Run the Consumer with:
 	mvn compile exec:java -Dexec.mainClass=com.cflewis.jms.ConsumerApp
+	
+License
+=======
+This code is released under a [BSD license](http://creativecommons.org/licenses/BSD/).
