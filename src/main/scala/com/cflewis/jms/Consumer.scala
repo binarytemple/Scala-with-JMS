@@ -1,7 +1,7 @@
-package com.cflewis.jms
+package com.cflewis.jms;
 
 import javax.jms._
-import org.apache.activemq.ActiveMQConnectionFactory
+import org.apache.activemq.ActiveMQConnectionFactory;
 
 class Consumer(brokerUrl:String) extends MessageListener {
     var factory = new ActiveMQConnectionFactory(brokerUrl)

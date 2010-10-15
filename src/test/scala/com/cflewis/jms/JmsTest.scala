@@ -1,9 +1,7 @@
 package com.cflewis.jms
 
 import org.scalatest.FlatSpec
-import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.junit.JUnitRunner
-import scala.collection.mutable.Stack
 import org.junit.runner.RunWith
 import javax.jms.ConnectionFactory
 import org.apache.activemq.ActiveMQConnectionFactory

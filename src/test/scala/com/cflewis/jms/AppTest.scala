@@ -1,7 +1,7 @@
 package com.cflewis.jms
 
-import org.junit._
-import Assert._
+import org.junit.Test
+import org.junit.Assert._
 
 @Test
 class AppTest {
