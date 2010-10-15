@@ -9,16 +9,16 @@ class Producer(factory:ConnectionFactory, queueName:String) {
     // private Session session;
     // private MessageProducer producer;
     
-    private var connection = factory.createConnection()
+    private val connection = factory.createConnection()
     connection.start()
-    private var session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)
-    private var destination = session.createQueue(queueName)
-    private var producer = session.createProducer(destination)
+    private val session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)
+    private val destination = session.createQueue(queueName)
+    private val producer = session.createProducer(destination)
     
     def run() = {
         for (i <- 0 until 100) {
             println("Sending message")
-            var message = session.createTextMessage("Number " + i + ": Hello world!")
+            val message = session.createTextMessage("Number " + i + ": Hello world!")
             producer.send(message)
         }
     }
@@ -31,7 +31,6 @@ class Producer(factory:ConnectionFactory, queueName:String) {
 
 object ProducerApp extends Application {
   val brokerUrl = "tcp://localhost:61616"
-  
   val factory:ConnectionFactory = new ActiveMQConnectionFactory(brokerUrl)
   val producer:Producer = new Producer(factory, "test")
   producer.run()

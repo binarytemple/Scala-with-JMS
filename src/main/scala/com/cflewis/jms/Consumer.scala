@@ -4,7 +4,7 @@ import javax.jms._
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 class Consumer(brokerUrl:String) extends MessageListener {
-    var factory = new ActiveMQConnectionFactory(brokerUrl)
+    val factory = new ActiveMQConnectionFactory(brokerUrl)
     val connection = factory.createConnection()
     connection.start()
     val session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)
